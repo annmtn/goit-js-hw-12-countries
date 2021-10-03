@@ -1,22 +1,22 @@
 <div class="country-name">
-    <h1>{{name}}</h1>
+    <h1>{{name.common}}</h1>
 </div>
 <div class="country-info">
-    <ul>
+    <ul class="country-list">
         <li>Capital: {{capital}}</li>
-        {{!-- <li>Population: {{population}}</li> --}}
-        <ul>
-            {{#each languages}}
-            <li>{{this}}</li>
-            {{/each}}
-        </ul>
+        <li>Region: {{region}}</li>
+        <li>Languages:
+            <ul>
+                {{#each languages}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </li>       
     </ul>
 </div>
 <div class="country-flag">
     <img 
-    {{#each flags }}
-        src={{this}}
-        alt="flag of {{name}}"
-        width='200'>
-        {{/each}}
+        src={{flags.[0]}}
+        alt="flag of {{name.common}}" 
+        width='300'>
 </div>
